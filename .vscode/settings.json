@@ -33,18 +33,18 @@
             //         "foreground": "#FFB86CFA"
             //     }
             // },
-            {
-                "scope": ["meta.tag.js",  "meta.brace.round", "punctuation.definition.parameters.end.js"],
-                "settings":{
-                    "foreground": "#50FA7B",
-                }
-            },
-            {
-                "scope": [ "punctuation.definition.parameters.begin.js", "punctuation.definition.parameters.end.js", "meta.brace.square", "punctuation.accessor.js","punctuation.separator.key-value.js", "punctuation.separator.parameter", "punctuation.separator.comma", "punctuation.accessor", "punctuation.definition.parameters.begin", "punctuation.definition.parameters.end", "punctuation.definition.block", "punctuation.definition.block", "punctuation.terminator.statement"],
-                "settings":{
-                    "foreground": "#50FA7B"
-                }
-            }
+            // {
+            //     "scope": ["meta.tag.js",  "meta.brace.round", "punctuation.definition.parameters.end.js"],
+            //     "settings":{
+            //         "foreground": "#50FA7B",
+            //     }
+            // },
+            // {
+            //     "scope": [ "punctuation.definition.parameters.begin.js", "punctuation.definition.parameters.end.js", "meta.brace.square", "punctuation.accessor.js","punctuation.separator.key-value.js", "punctuation.separator.parameter", "punctuation.separator.comma", "punctuation.accessor", "punctuation.definition.parameters.begin", "punctuation.definition.parameters.end", "punctuation.definition.block", "punctuation.definition.block", "punctuation.terminator.statement"],
+            //     "settings":{
+            //         "foreground": "#50FA7B"
+            //     }
+            // }
         ],
         "editor.contrastActiveBorder": "#FFF",
         "editor.contrastBorder": "#FFF",
