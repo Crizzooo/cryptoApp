@@ -20,6 +20,13 @@ router.get('/google/redirect', passport.authenticate('google', {
   failureRedirect: '/'
 }));
 
+
+// coinbase redirect uri
+//http://localhost:3000/api/users/coinbase/redirect
+
+
+
+
 // log a user in to the session
 router.post('/login', (req, res, next) => {
   const { email, password } = req.body;

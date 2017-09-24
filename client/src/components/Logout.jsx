@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { logoutUser } from '../reducers/user';
 
 export const Logout = ({ logout }) => (
-  <button onClick={logout}>Logout</button>
+  <button className="loginButton" onClick={logout}>Logout</button>
 );
 
 const mapDispatch = (dispatch) => ({

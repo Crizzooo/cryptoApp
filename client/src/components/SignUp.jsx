@@ -6,17 +6,19 @@ import { connect } from 'react-redux';
 import { signupUser } from '../reducers/user';
 
 export const SignUp = ({ signup }) => (
+<div className="loginGroup">
   <form onSubmit={evt => {
     evt.preventDefault();
     signup(evt.target.username.value, evt.target.password.value);
   } }>
-    <input name="username" />
-    <input name="password" type="password" />
+    <div className="row"><input className="loginInput" name="username" /></div>
+    <div className="row"><input className="loginInput" name="password" type="password" /></div>
     {
       /*Other fields should go here for storage in database if necessary*/
     }
-    <input type="submit" value="Signup" />
+    <div className="row"><input className="loginButton" type="submit" value="Signup" /></div>
   </form>
+  </div>
 );
 
 const mapDispatch = (dispatch) => ({

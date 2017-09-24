@@ -7,6 +7,7 @@ const session = require("express-session");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth2").Strategy;
+const CoinbaseStrategy = require('passport-coinbase').Strategy;
 
 if (process.env.NODE_ENV === 'development') {
   require('../secrets');
@@ -42,8 +43,8 @@ app.use(session({
 
 // initialize passport
 app.use(passport.initialize());
-app.use(passport.session());
-//
+app.use(passport.session())
+
 passport.serializeUser((user, done) => {
   try {
     done(null, user.id);
@@ -51,15 +52,16 @@ passport.serializeUser((user, done) => {
     done(err);
   }
 });
-//
+
+
 passport.deserializeUser((id, done) => {
   User.findById(id)
     .then(user => done(null, user))
     .catch(done);
 });
-//
-//
-// // register google strategy with passport
+
+
+//register google strategy with passport
 passport.use(new GoogleStrategy(
   {
     clientID: process.env.GOOGLE_CLIENT_ID,
@@ -68,7 +70,6 @@ passport.use(new GoogleStrategy(
     passReqToCallback: true
   },
   function (request, token, refreshToken, profile, done) {
-    console.log('user profile?')
     return User.findOrCreate({
       where: {
         google_id: profile.id,
@@ -80,6 +81,17 @@ passport.use(new GoogleStrategy(
     .catch(done);
   }
 ));
+
+
+/* Note to protect a routewith passport authenticate
+app.get('/api/me',
+passport.authenticate('bearer', { session: false }),
+function(req, res) {
+  res.json(req.user);
+});
+*/
+
+
 
 // // sync database, then start server
 db.sync({ force: true }) // uncomment force true to clear database with each sync

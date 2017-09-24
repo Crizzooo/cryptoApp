@@ -9,7 +9,7 @@ export class GoogleSignIn extends Component {
   }
   render() {
     return (
-      <a href="/api/users/google"><button>
+      <a href="/api/users/google"><button className="googleButton">
         Login with Google
       </button></a>
     )

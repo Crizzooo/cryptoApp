@@ -4,14 +4,20 @@ import { connect } from 'react-redux';
 import { loginUser } from '../reducers/user';
 
 export const Login = ({ login }) => (
-  <div>
+  <div class="inherit loginGroup">
     <form onSubmit={evt => {
       evt.preventDefault();
       login(evt.target.username.value, evt.target.password.value)
     } }>
-      <input name="username" />
-      <input name="password" type="password" />
-      <input type="submit" value="Login" />
+      <div className="row">
+        <input className="loginInput" name="username" />
+      </div>
+      <div className="row">
+        <input className="loginInput" name="password" type="password" />
+      </div>
+      <div className="row">
+        <input className="loginButton" type="submit" value="Login" />
+      </div>
     </form>
   </div>
 );

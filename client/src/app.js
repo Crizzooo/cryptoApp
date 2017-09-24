@@ -9,8 +9,11 @@ import GoogleSignIn from './components/GoogleSignIn';
 //load components
 
 const App = ({ user }) => (
-  <div>
-    {!user.id ? <div>
+  <div className="container">
+    {!user.id ? 
+    <div className="container">
+      <div className="row"><h3 className="appTitle large">Crypto</h3></div>
+      <div className="row"><h4 className="appTitle small">CASH</h4></div>
       <User />
       <SignUp />
       <GoogleSignIn />
