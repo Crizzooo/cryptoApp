@@ -10,7 +10,7 @@ const GoogleStrategy = require("passport-google-oauth2").Strategy;
 const CoinbaseStrategy = require('passport-coinbase').Strategy;
 
 if (process.env.NODE_ENV === 'development') {
-  require('../secrets');
+  // require('../secrets');
 }
 
 const db = require('../db');
@@ -64,8 +64,8 @@ passport.deserializeUser((id, done) => {
 //register google strategy with passport
 passport.use(new GoogleStrategy(
   {
-    clientID: process.env.GOOGLE_CLIENT_ID,
-    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    clientID: process.env.GOOGLE_CLIENT_ID || 'fakeID',
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET || 'fakeSecret',
     callbackURL: `http://localhost:${PORT}/api/users/google/redirect`,
     passReqToCallback: true
   },
